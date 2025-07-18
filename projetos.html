@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo Ferreira - Cursando Análise e Desenvolvimento de Sistemas</title>
+    <meta name="description" content="Portfolio profissional de Gustavo Henrique Carvalho Ferreira - Desenvolvedor Full Stack especializado em React, Node.js e tecnologias modernas">
+    <meta name="author" content="Gustavo Henrique Carvalho Ferreira">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" style="text-decoration: none;"><h1 class="logo">Gustavo Ferreira</h1></a>
+            <div class="nav-links">
+                <a href="index.html#about">Sobre</a>
+                <a href="index.html#experience">Experiência</a>
+                <a href="index.html#skills">Habilidades</a>
+                <a href="index.html#contact">Contato</a>
+                <a href="projetos.html">Projetos</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+<!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            
+<section id="calculadora" class="calculadora">
+  <h2>Calculadora</h2>
+  <div class="calc-container">
+    <input type="text" id="display" class="calc-display" disabled>
+    <div class="calc-buttons">
+      <button onclick="addToDisplay('7')">7</button>
+      <button onclick="addToDisplay('8')">8</button>
+      <button onclick="addToDisplay('9')">9</button>
+      <button onclick="addToDisplay('/')">÷</button>
+
+      <button onclick="addToDisplay('4')">4</button>
+      <button onclick="addToDisplay('5')">5</button>
+      <button onclick="addToDisplay('6')">6</button>
+      <button onclick="addToDisplay('*')">×</button>
+
+      <button onclick="addToDisplay('1')">1</button>
+      <button onclick="addToDisplay('2')">2</button>
+      <button onclick="addToDisplay('3')">3</button>
+      <button onclick="addToDisplay('-')">−</button>
+
+      <button onclick="addToDisplay('0')">0</button>
+      <button onclick="addToDisplay('.')">.</button>
+      <button onclick="calcularResultado()">=</button>
+      <button onclick="addToDisplay('+')">+</button>
+
+      <button onclick="limparDisplay()" class="limpar" colspan="4">C</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .calculadora {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1e1e1e;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .calc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .calc-display {
+    height: 50px;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+  }
+
+  .calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .calc-buttons button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    transition: background 0.3s;
+  }
+
+  .calc-buttons button:hover {
+    background-color: #666;
+  }
+
+  .limpar {
+    grid-column: span 4;
+    background-color: #d32f2f;
+  }
+
+  .limpar:hover {
+    background-color: #f44336;
+  }
+</style>
+
+<script>
+  function addToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function limparDisplay() {
+    document.getElementById('display').value = '';
+  }
+
+  function calcularResultado() {
+    try {
+      const result = eval(document.getElementById('display').value);
+      document.getElementById('display').value = result;
+    } catch (e) {
+      document.getElementById('display').value = 'Erro';
+    }
+  }
+</script>
